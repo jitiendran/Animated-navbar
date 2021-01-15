@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+$primary-color: rgb(255, 255, 255);
+
+@mixin disp($display,$direction,$j_content,$a_items) {
+    display: $display;
+    flex-direction: $direction;
+    justify-content: $j_content;
+    align-items: $a_items;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #A800DB;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+}
+nav{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    margin-right: 3em;
+    padding: .5em;
+    display: flex;
+    .container{
+        width: 100%;
+        margin-top: 20%;
+        height: 5em;
+        @include disp(flex,row,center,center);
+        .bar-container{
+            width: 4em;
+            height: 4em;
+            padding: 1em;
+            button{
+                text-align: center;
+                background: transparent;
+                font-size: 1.9em;
+                color: black;
+                border: none;
+                outline: none;
+                cursor: pointer;
+            }
+        }
+        .icon-container{
+            height: 4em;
+            @include disp(flex,row,space-evenly,center);
+            padding: 1em;
+            margin-left: 0em;
+            width: 19em;
+            background: rgba( 155, 155, 155, 0.35 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 5.5px );
+            -webkit-backdrop-filter: blur( 5.5px );
+            border-radius: 0 2em 2em 0;
+            display: none;
+            @keyframes lefts{
+                0%{
+                    margin-left: -3em;
+                }
+                100%{
+                    margin-left: 0em;
+                }
+            }
+            a{
+                text-decoration: none;
+                color: #fff;
+                font-size: 1.8em;
+            }
+        }
+    }
+}
